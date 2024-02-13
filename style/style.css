@@ -154,6 +154,14 @@ section {
         width: 5rem;
     }
 
+    #alentin {
+        right: 0.3rem;
+    }
+
+    #title-logo-G {
+        left: 0.2rem;
+    }
+
     #home h1 {
         display: inline-block;
         font-size: 3rem;
