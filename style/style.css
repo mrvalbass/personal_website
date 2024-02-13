@@ -1,3 +1,8 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 68px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +30,7 @@ ul {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 100vh;
+    min-height: 100svh;
 }
 
 nav svg {
@@ -34,8 +39,6 @@ nav svg {
 
 @media (width <= 1000px) {
 nav {
-    position: fixed;
-    top: 0;
     max-width: none;
     min-width: 100vw;
     width:auto;
@@ -56,7 +59,7 @@ nav svg {
 /* General section style */
 
 section {
-    min-height: 100vh;
+    min-height: 100svh;
     padding-left: 8rem;
 }
 
@@ -78,7 +81,7 @@ section {
     .even,
     #experiences,
     #about-me {
-        min-height: calc(100vh - 74px);
+        min-height: calc(100svh - 68px);
     }
 }
 /* Home section style */
