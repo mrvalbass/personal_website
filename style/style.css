@@ -195,6 +195,7 @@ input[type="submit"]:hover {
 #contact-options {
     width: 50%;
     max-width: 666px;
+    min-width: 333px;
     height: 3rem;
     display: flex;
     justify-content: space-around;
@@ -268,8 +269,8 @@ input[type="submit"]:hover {
         width: 5rem;
     }
 
-    #alentin {
-        right: 0.3rem;
+    #title-logo-V {
+        left: 0.5rem;
     }
 
     #title-logo-G {
