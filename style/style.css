@@ -10,6 +10,10 @@ html {
     text-decoration: none;
     /* border: 1px solid red; */
     color: #CBB083;
+    font-family: "Montserrat", sans-serif;
+}
+
+h1,h2,h3,label {
     font-family: "Megrim", sans-serif;
 }
 
@@ -22,13 +26,14 @@ nav {
     padding: 0 2rem;
     width: 8rem;
     transition: width 0.2s ease;
+    z-index: 10;
 }
 
 nav:hover {
     width: 18rem;
 }
 
-ul {
+.navbar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -51,9 +56,15 @@ nav a {
     transition: stroke 0.2s ease;
 }
 
+#journey-icon{
+    fill: rgb(150, 150, 150);
+    transition: fill 0.2s ease;
+}
+
 nav a p {
-    visibility: hidden;
+    display: none;
     text-align: center;
+    font-family: "Megrim",sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
     color: rgb(150, 150, 150);
@@ -65,13 +76,17 @@ a:hover path {
     stroke: #CBB083;
 }
 
+a:hover #journey-icon {
+    fill: #CBB083;
+}
+
 a:hover p {
     color: #CBB083;
 }
 
 @media (width > 1000px) {
     nav:hover a p {
-        visibility: visible;
+        display: block;
     }
 }
 /* General section style */
@@ -91,6 +106,16 @@ section {
     background-color: #495C78;
 }
 
+section h1 {
+    text-align: center;
+    padding: 1rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+section h2 {
+    text-align: center;
+}
 /* Home section style */
 
 #home {
@@ -142,9 +167,65 @@ section {
 
 #home h2 {
     font-size: 3rem;
-    text-align: center;
 }
 
+/* Journey section style */
+#journey {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#map-container {
+    width: 75%;
+    max-width: 1000px;
+    margin: 0 auto
+}
+
+#map ellipse {
+    fill: #2d3847;
+    stroke: #2d3847;    
+    transition: 
+        stroke 0.2s ease,
+        fill 0.2s ease;
+}
+
+#map ellipse:hover,
+#map ellipse:active {
+    fill: #CBB083;
+    stroke: #CBB083;
+    cursor: pointer;
+}
+
+#journey-list {
+    flex-grow: 1;
+    background-color: #2d3847;
+    margin: 1rem;
+    border-radius: 5px;
+    border: solid 0.25rem #CBB083;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.place {
+    display: flex;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.place-description {
+    flex-basis: 70%;
+}
+
+.place-logo {
+    flex-basis: 30%;
+    border: 2px solid #CBB083
+}
+
+#journey-list span {
+    text-decoration: line-through;
+}
 /* Contact section style */
 
 #contact {
@@ -163,12 +244,23 @@ form {
 fieldset {
     border: 0.25rem solid #CBB083;
     border-radius: 5px;
+    background-color: #7593c054;
+    backdrop-filter: blur(10px);
     width: 100%;
     height: 75vh;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+legend {
+    background-color: #CBB083;
+    border: 0.25rem solid #CBB083;
+    border-radius: 5px;
+}
+legend h1 {
+    color:#495C78;
 }
 
 label {
@@ -210,7 +302,7 @@ input[type="submit"] {
     border-radius: 5px;
     border: 0.15rem solid #CBB083;
     color: #CBB083;
-    background-color: #495C78;
+    background-color: transparent;
     transition: 
         background-color 0.2s ease,
         color 0.2s ease;
@@ -225,7 +317,7 @@ input[type="submit"]:hover {
     width: 50%;
     max-width: 666px;
     min-width: 333px;
-    height: 3rem;
+    height: 4rem;
     display: flex;
     justify-content: space-around;
     background-color: #CBB083;
@@ -270,18 +362,21 @@ input[type="submit"]:hover {
         padding: 0.5rem;
     }
 
-    ul {
+    .navbar {
         flex-direction: row;
         min-height: 0;
     }
 
     .nav-icon {
-        width: auto;
-        height: 3rem
+        height: 3rem;
     }
 
     .nav-icon path{
         stroke: #CBB083;
+    }
+
+    #journey-icon {
+        fill: #CBB083;
     }
 
     section {
@@ -313,6 +408,26 @@ input[type="submit"]:hover {
     
     #home h2 {
         font-size: 1.5rem;
+    }
+    
+    #map-container {
+        width: 100%;
+    }
+
+    .place {
+        flex-direction: column;
+    }
+
+    .place-description {
+        order: 1;
+    }
+
+    .place-logo {
+        order: 2;
+    }
+
+    #contact-options {
+        height: 3rem;
     }
     
 }
