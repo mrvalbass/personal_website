@@ -1,0 +1,131 @@
+#contact {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+form {
+  width: 75%;
+  max-width: 1000px;
+}
+
+fieldset {
+  border: 0.25rem solid #CBB083;
+  border-radius: 5px;
+  background-color: #7593c054;
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 75vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+legend {
+  background-color: #CBB083;
+  border: 0.25rem solid #CBB083;
+  border-radius: 5px;
+}
+legend h1 {
+  color:#495C78;
+}
+
+label {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+input,
+textarea {
+  font-family: "Montserrat",sans-serif;
+  font-size: 1rem;
+  color: black;
+  background-color: #ffffff7e;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 3px;
+}
+
+fieldset p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.textarea {
+  flex: 1
+}
+
+textarea{
+  flex: 1;
+}
+
+input[type="submit"] {
+  margin: auto;
+  padding: 0.5rem 2rem;
+  font-family: "Megrim", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 0.15rem solid #CBB083;
+  color: #CBB083;
+  background-color: transparent;
+  transition: 
+      background-color 0.2s ease,
+      color 0.2s ease;
+}
+
+input[type="submit"]:hover {
+  color: #495C78;
+  background-color: #CBB083;
+}
+
+#contact-options {
+  width: 50%;
+  max-width: 666px;
+  min-width: 333px;
+  height: 4rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: #CBB083;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+#contact-options svg {
+  fill:#495C78;
+  height: 100%;
+}
+
+#tel {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: width 0.2s ease;
+}
+
+#num {
+  display: none;
+  color: #495C78;
+  font-weight: 700;
+  transition: display 0.2 ease;
+}
+
+#tel:hover #num{
+  display: block;
+}
+
+/* Mobile layout */
+
+@media (width <= 1000px) {
+  legend {
+    font-size: 0.75rem;
+  }
+
+  #contact-options {
+    height: 3rem;
+  }
+}

@@ -1,0 +1,92 @@
+#journey {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#map-container {
+  width: 75%;
+  max-width: 1000px;
+  margin: 0 auto
+}
+
+#map ellipse {
+  fill: #2d3847;
+  stroke: #2d3847;    
+  transition: 
+      stroke 0.2s ease,
+      fill 0.2s ease;
+}
+
+#map ellipse:hover,
+#map ellipse:active {
+  fill: #CBB083;
+  stroke: #CBB083;
+  cursor: pointer;
+}
+
+#journey-list {
+  flex-grow: 1;
+  background-color: #2d3847;
+  margin: 1rem;
+  border-radius: 5px;
+  border: solid 0.25rem #CBB083;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1250px;
+}
+
+.place {
+  display: flex;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.place-description {
+  flex-basis: 70%;
+}
+
+.place-logo {
+  flex-basis: 30%;
+  border: 2px solid #CBB083
+}
+
+#logo-la-capsule {
+  border-radius: 50%;
+  padding: 5rem;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo-la-capsule svg {
+  width: auto;
+}
+
+#journey-list span {
+  text-decoration: line-through;
+}
+
+/* Mobile layout */
+
+@media (width <= 1000px) {
+  #map-container {
+    width: 100%;
+  }
+
+  .place {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .place-description {
+    order: 1;
+  }
+
+  .place-logo {
+    order: 2;
+  }
+}

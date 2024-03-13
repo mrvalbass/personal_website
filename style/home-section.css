@@ -1,0 +1,156 @@
+#home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10vh
+}
+
+.title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  gap: 3rem;
+  transform: translateX(6%);
+}
+
+.title-logo {
+  width: 15rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#title-logo-V {
+  animation: 
+    heartbeat 1570ms ease-in-out 1.84,
+    translation-V 1s ease-in-out 2890ms forwards;
+}
+
+/* #alentin {
+  position: relative;
+  right: 1.2rem;
+} */
+
+#title-logo-G {
+  animation: 
+    heartbeat 1570ms ease-in-out 1.84,
+    translation-G 1s ease-in-out 2890ms forwards;
+}
+
+/* #uillot {
+  position: relative;
+  right:0.77rem;
+} */
+
+#home h1 {
+opacity: 0;
+font-size: 5rem;
+animation: appear 1s ease-out 2890ms forwards;
+}
+
+#home h2 {
+  opacity: 0;
+  font-size: 3rem;
+  animation: appear 1s ease-out 2890ms forwards;
+}
+
+/* Mobile layout */
+
+@media (width <= 1000px) {
+  #home {
+    gap: 6vh;
+  }
+
+  .title {
+    gap: 1rem;
+  }
+
+  .title-logo {
+    width: 8rem;
+  }
+
+  #title-logo-V {
+    animation: 
+      heartbeat 1570ms ease-in-out 1.84,
+      translation-V-mobile 1s ease-in-out 2890ms forwards;
+  }  
+
+  #title-logo-G {
+    animation: 
+      heartbeat 1570ms ease-in-out 1.84,
+      translation-G-mobile 1s ease-in-out 2890ms forwards;
+  }
+  
+  #home h1 {
+    font-size: 2.5rem;
+  }
+
+  #home h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Title animation */
+
+@keyframes heartbeat {
+  0% {
+    opacity: 0.2;
+  }
+  64% {
+    opacity: 0.2;
+  }
+  70% {
+    opacity: 1;
+  }
+  71% {
+    opacity: 1;
+  }
+  77% {
+    opacity: 0.2;
+  }
+  78% {
+    opacity: 0.2;
+  }
+  84% {
+    opacity: 1;
+  }
+  87% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes translation-V {
+  100% {
+    transform: translateX(-132%) translateY(-4%);
+  }
+}
+
+@keyframes translation-G {
+  100% {
+    transform: translateX(26%) translateY(-4%) rotate(20deg);
+  }
+}
+
+@keyframes translation-V-mobile {
+  100% {
+    transform: translateX(-126%) translateY(0%);
+  }
+}
+
+@keyframes translation-G-mobile {
+  100% {
+    transform: translateX(26%) translateY(0%) rotate(20deg);
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
