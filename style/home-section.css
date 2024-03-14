@@ -29,21 +29,11 @@
     translation-V 1s ease-in-out 2890ms forwards;
 }
 
-/* #alentin {
-  position: relative;
-  right: 1.2rem;
-} */
-
 #title-logo-G {
   animation: 
     heartbeat 1570ms ease-in-out 1.84,
     translation-G 1s ease-in-out 2890ms forwards;
 }
-
-/* #uillot {
-  position: relative;
-  right:0.77rem;
-} */
 
 #home h1 {
 opacity: 0;
@@ -69,7 +59,7 @@ animation: appear 1s ease-out 2890ms forwards;
   }
 
   .title-logo {
-    width: 8rem;
+    width: 7rem;
   }
 
   #title-logo-V {
@@ -85,11 +75,11 @@ animation: appear 1s ease-out 2890ms forwards;
   }
   
   #home h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   #home h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -139,7 +129,7 @@ animation: appear 1s ease-out 2890ms forwards;
 
 @keyframes translation-V-mobile {
   100% {
-    transform: translateX(-126%) translateY(0%);
+    transform: translateX(-120%) translateY(0%);
   }
 }
 

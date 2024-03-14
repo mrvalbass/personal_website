@@ -83,6 +83,12 @@ input[type="submit"]:hover {
   background-color: #CBB083;
 }
 
+input[type="submit"]:active {
+  color: #CBB083;
+  background-color: transparent;
+}
+
+
 #contact-options {
   width: 50%;
   max-width: 666px;

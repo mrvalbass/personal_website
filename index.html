@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <title>Valentin Guillot</title>
-    <!-- <script src="./script/script.js" defer></script> -->
+    <script src="./script/script.js" defer></script>
 </head>
 <body>
     <nav>
@@ -58,14 +58,6 @@
         </ul>
     </nav>
     <main>
-        <!-- <section class="odd" id="home">
-            <div class="title">
-                <svg id="title-logo-V" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" >
-                    <path stroke="currentColor" stroke-linecap="butt" stroke-linejoin="miter"  stroke-width="1.5" d="M 12.675 11.202 L 19.609 11.181 L 12.032 22.454 L 4.371 1.589 L 11.989 1.672"/>
-                </svg>
-        </div>
-        </section> -->
-
         <section class="odd" id="home">
             <div class="title">
                 <div class="title-element">
@@ -88,85 +80,105 @@
             <div id="map-container">
                 <svg id="map" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" fill="none">
                     <path stroke="currentColor" stroke-linejoin="round" stroke-width="5" d="M 250.346 48.604 C 275.665 44.3 278.223 39.583 278.223 39.583 C 307.479 81.035 405.624 133.476 464.075 131.998 L 455.869 170.703 L 448.083 210.279 C 446.882 207.02 433.201 211.949 421.362 221.878 C 409.523 231.808 399.527 246.738 405.695 263.48 C 409.587 258.316 416.875 259.798 422.79 263.777 C 428.705 267.755 433.247 274.231 431.647 279.052 C 421.862 295.585 421.826 317.849 428.634 335.985 C 435.441 354.121 449.092 368.129 466.681 368.151 C 459.15 404.087 434.952 412.596 404.894 413.111 C 374.835 413.626 338.916 406.147 307.944 410.106 C 296.795 418.821 294.204 428.433 294.831 436.035 C 295.458 443.636 299.303 449.227 301.024 449.899 C 277.141 470.404 229.872 457.505 187.825 440.308 C 145.778 423.11 108.952 401.612 105.955 404.916 C 144.646 375.311 145.887 279.861 123.122 241.812 C 100.356 203.764 59.763 182.541 33.319 179.659 L 34.182 157.577 L 35.044 135.495 C 78.132 145.334 129.492 141.637 171.312 126.467 C 213.133 111.297 245.415 84.654 250.346 48.604 Z"/>
-                    <ellipse id="lyon" stroke="#000" fill="#000" cx="356" cy="288" rx="7.5" ry="7.5"/>
-                    <ellipse id="toulouse" stroke="#000" fill="#000" cx="233" cy="395" rx="7.5" ry="7.5"/>
-                    <ellipse id="nice" stroke="#000" fill="#000" cx="454" cy="379" rx="7.5" ry="7.5"/>
-                    <ellipse id="bar-sur-loup" stroke="#000" fill="#000" cx="438" cy="383" rx="7.5" ry="7.5"/>
-                    <ellipse id="dijon" stroke="#000" fill="#000" cx="364" cy="214" rx="7.5" ry="7.5"/>
-                    <ellipse id="versailles" stroke="#000" fill="#000" cx="261" cy="148" rx="7.5" ry="7.5"/>
+                    <ellipse class="city current-city" id="lyon" cx="356" cy="288" rx="7.5" ry="7.5"/>
+                    <ellipse class="city" id="toulouse" cx="233" cy="395" rx="7.5" ry="7.5"/>
+                    <ellipse class="city" id="dijon" cx="364" cy="214" rx="7.5" ry="7.5"/>
+                    <ellipse class="city" id="versailles" cx="261" cy="148" rx="7.5" ry="7.5"/>
+                    <ellipse class="city" id="bar-sur-loup" cx="438" cy="383" rx="7.5" ry="7.5"/>
+                    <ellipse class="city" id="nice" cx="454" cy="379" rx="7.5" ry="7.5"/>
                 </svg>
-            </div>            
-            <ul id="journey-list">
-                <li class="place" id="place-holder">
-                    <h2>hover a location</h2>
-                </li>
-                <li class="place" id="nice-card">
-                    <div class="place-description">
-                        <h2>La Capsule - NICE</h2>
-                        <h3>2024</h3>
-                        <p>Fullstack web and mobile development training with React.js, Node.js and React Native</p>
-                        <p>6 years after being done with school, it's time to go back in and for a good reason : <span>making money</span> doing a job I love. <br> I had the opportunity to develop basic web applications in my previous experiences and fell in love with it. So I decided to quit my job to get the knowledge I lacked then, along with a certification recognized by the French Government from La Capsule.
-                        And here I am, not to rock you like a hurricane but ready and eager for this new beginning.
-                        </p>
-                    </div>
-                    <div class="place-logo" id="logo-la-capsule">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
-                            <path d="M20.677 0.919488C20.2403 0.490679 19.6889 0.195528 19.0883 0.0691219C18.4878 -0.0572839 17.8633 -0.0096285 17.2892 0.206424L2.11347 5.81189C1.6012 6 1.1452 6.31397 0.787968 6.72452C0.430739 7.13507 0.183917 7.62884 0.0705098 8.1598C-0.0428974 8.69075 -0.0191975 9.2416 0.139404 9.76099C0.298005 10.2804 0.586339 10.7514 0.977531 11.1301L3.54834 13.6259L5.00313 12.1502L2.43233 9.6545C2.29161 9.52007 2.18759 9.35229 2.13007 9.16691C2.07255 8.98154 2.06341 8.78467 2.10351 8.59481C2.14056 8.40371 2.22715 8.22553 2.35472 8.07789C2.48229 7.93025 2.64643 7.81827 2.8309 7.753L17.5981 2.29609L3.79745 16.3692C3.68384 16.484 3.59419 16.6201 3.53367 16.7695C3.47316 16.919 3.44295 17.0788 3.4448 17.2399C3.44665 17.4009 3.48052 17.56 3.54446 17.7081C3.6084 17.8561 3.70115 17.9901 3.81737 18.1023C3.93191 18.2166 4.06882 18.3064 4.21965 18.366C4.37047 18.4256 4.532 18.4538 4.69424 18.4489C4.85593 18.4478 5.01579 18.4149 5.16459 18.352C5.31339 18.2891 5.44816 18.1975 5.56113 18.0825L19.3717 3.99952L14.26 18.8154C14.1961 18.9985 14.0866 19.1626 13.9418 19.2925C13.797 19.4223 13.6215 19.5137 13.4317 19.5582C13.2418 19.6027 13.0438 19.5987 12.8559 19.5468C12.668 19.4948 12.4963 19.3965 12.3568 19.261L9.78602 16.7851L8.33122 18.2608L10.8921 20.7466C11.1951 21.0407 11.5535 21.2725 11.9467 21.4288C12.34 21.5852 12.7604 21.6629 13.1839 21.6577C13.4258 21.6574 13.6667 21.6274 13.9013 21.5686C14.4335 21.4441 14.925 21.1869 15.3294 20.8213C15.7339 20.4557 16.038 19.9937 16.213 19.4789L21.4742 4.25701C21.6796 3.68358 21.7136 3.06332 21.5722 2.47109C21.4307 1.87887 21.1198 1.33998 20.677 0.919488Z" fill="#F94A56"/>
-                        </svg>
-                    </div>
-                </li>
-                <li class="place">
-                    <div class="place-description">
-                        <h2>V. MANE FILS</h2>
-                        <h3>2018</h3>
-                    </div>
-                    <div class="place-logo">
-                        <p>image</p>
-                    </div>
-                </li>
-                <li class="place">
-                    <div class="place-logo">
-                        <p>image</p>
-                    </div>
-                    <div class="place-description">
-                        <h2>ISIPCA - VERSAILLES</h2>
-                        <h3>2017 - 2018</h3>
-                        <p>Description</p>
-                    </div>
-                </li>
-                <li class="place">
-                    <div class="place-description">
-                        <h2>AGROSUP Dijon - DIJON</h2>
-                        <h3>2016 - 2017</h3>
-                        <p>Description</p>
-                    </div>
-                    <div class="place-logo">
-                        <p>image</p>
-                    </div>
-                </li>                
-                <li class="place">
-                    <div class="place-logo">
-                        <p>image</p>
-                    </div>
-                    <div class="place-description">
-                        <h2>ENSIACET - TOULOUSE</h2>
-                        <h3>2014 - 2016</h3>
-                        <p>Top 3 of the best french engineering schools</p>
-                    </div>
-                </li>
-                <li class="place">
-                    <div class="place-description">
-                        <h2>La Martinière Monplaisir - LYON</h2>
-                        <h3>2012 - 2014</h3>
-                        <p>Preparatory classes for French engineering school</p>
-                        <p>Specialized in physics and chemistry, this formation aimed to provide the basic knowledge to succeed in the competitive examinations for entering the French engineering school</p>
-                        <p>Basically the most demanding part of my scholarship but yet the less relevant when applying for a job 👍</p>
-                    </div>
-                    <div class="place-logo">
-                        <p>image</p>
-                    </div>
-                </li>
-            </ul>
+            </div>
+            <div id="carousel">
+                <button class="carousel-button" id="left-arrow">
+                    <svg viewBox="0 0 330 330" fill="#CBB083" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M 233.252 155.997 L 120.752 6.001 C 115.78 -0.627 106.38 -1.969 99.752 3.001 C 93.124 7.972 91.781 17.374 96.752 24.001 L 202.502 164.998 L 96.752 306.001 C 91.781 312.628 93.125 322.031 99.752 327.001 C 102.45 329.025 105.608 330.002 108.74 330.002 C 113.301 330.002 117.805 327.93 120.752 324.001 L 233.252 173.997 C 237.252 168.664 237.252 161.33 233.252 155.997 Z" style="transform-origin: 165.001px 165.001px;" transform="matrix(-1, 0, 0, -1, 0, 0)"/>
+                    </svg>                
+                </button>
+                <div class="slider-container">
+                    <ul class="journey-list">
+                        <li class="place current-card">
+                            <div class="place-description">
+                                <h2>La Martinière Monplaisir - LYON</h2>
+                                <h3>2012 - 2014</h3>
+                                <p>Preparatory classes for French engineering school</p>
+                                <p>Specialized in physics and chemistry, this formation aimed to provide the basic knowledge to succeed in the competitive examinations for entering the French engineering school</p>
+                                <p>Basically the most demanding part of my scholarship but yet the less relevant when applying for a job 👍</p>
+                            </div>
+                            <div class="place-logo">
+                                <p>image</p>
+                            </div>
+                        </li>
+                        <li class="place">
+                            <div class="place-logo">
+                                <p>image</p>
+                            </div>
+                            <div class="place-description">
+                                <h2>ENSIACET - TOULOUSE</h2>
+                                <h3>2014 - 2016</h3>
+                                <p>Top 3 of the best french engineering schools</p>
+                            </div>
+                        </li>
+                        <li class="place">
+                            <div class="place-description">
+                                <h2>AGROSUP Dijon - DIJON</h2>
+                                <h3>2016 - 2017</h3>
+                                <p>Description</p>
+                            </div>
+                            <div class="place-logo">
+                                <p>image</p>
+                            </div>
+                        </li>                
+                        <li class="place">
+                            <div class="place-logo">
+                                <p>image</p>
+                            </div>
+                            <div class="place-description">
+                                <h2>ISIPCA - VERSAILLES</h2>
+                                <h3>2017 - 2018</h3>
+                                <p>Description</p>
+                            </div>
+                        </li>
+                        <li class="place">
+                            <div class="place-description">
+                                <h2>V. MANE FILS</h2>
+                                <h3>2018</h3>
+                            </div>
+                            <div class="place-logo">
+                                <p>image</p>
+                            </div>
+                        </li>
+                        <li class="place" id="nice-card">
+                            <div class="place-description">
+                                <h2>La Capsule - NICE</h2>
+                                <h3>2024</h3>
+                                <p>Fullstack web and mobile development training with React.js, Node.js and React Native</p>
+                                <p>6 years after being done with school, it's time to go back in and for a good reason : <span>making money</span> doing a job I love. <br> I had the opportunity to develop basic web applications in my previous experiences and fell in love with it. So I decided to quit my job to get the knowledge I lacked then, along with a certification recognized by the French Government from La Capsule.
+                                And here I am, not to rock you like a hurricane but ready and eager for this new beginning.
+                                </p>
+                            </div>
+                            <div class="place-logo" id="logo-la-capsule">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22" fill="none">
+                                    <path d="M20.677 0.919488C20.2403 0.490679 19.6889 0.195528 19.0883 0.0691219C18.4878 -0.0572839 17.8633 -0.0096285 17.2892 0.206424L2.11347 5.81189C1.6012 6 1.1452 6.31397 0.787968 6.72452C0.430739 7.13507 0.183917 7.62884 0.0705098 8.1598C-0.0428974 8.69075 -0.0191975 9.2416 0.139404 9.76099C0.298005 10.2804 0.586339 10.7514 0.977531 11.1301L3.54834 13.6259L5.00313 12.1502L2.43233 9.6545C2.29161 9.52007 2.18759 9.35229 2.13007 9.16691C2.07255 8.98154 2.06341 8.78467 2.10351 8.59481C2.14056 8.40371 2.22715 8.22553 2.35472 8.07789C2.48229 7.93025 2.64643 7.81827 2.8309 7.753L17.5981 2.29609L3.79745 16.3692C3.68384 16.484 3.59419 16.6201 3.53367 16.7695C3.47316 16.919 3.44295 17.0788 3.4448 17.2399C3.44665 17.4009 3.48052 17.56 3.54446 17.7081C3.6084 17.8561 3.70115 17.9901 3.81737 18.1023C3.93191 18.2166 4.06882 18.3064 4.21965 18.366C4.37047 18.4256 4.532 18.4538 4.69424 18.4489C4.85593 18.4478 5.01579 18.4149 5.16459 18.352C5.31339 18.2891 5.44816 18.1975 5.56113 18.0825L19.3717 3.99952L14.26 18.8154C14.1961 18.9985 14.0866 19.1626 13.9418 19.2925C13.797 19.4223 13.6215 19.5137 13.4317 19.5582C13.2418 19.6027 13.0438 19.5987 12.8559 19.5468C12.668 19.4948 12.4963 19.3965 12.3568 19.261L9.78602 16.7851L8.33122 18.2608L10.8921 20.7466C11.1951 21.0407 11.5535 21.2725 11.9467 21.4288C12.34 21.5852 12.7604 21.6629 13.1839 21.6577C13.4258 21.6574 13.6667 21.6274 13.9013 21.5686C14.4335 21.4441 14.925 21.1869 15.3294 20.8213C15.7339 20.4557 16.038 19.9937 16.213 19.4789L21.4742 4.25701C21.6796 3.68358 21.7136 3.06332 21.5722 2.47109C21.4307 1.87887 21.1198 1.33998 20.677 0.919488Z" fill="#F94A56"/>
+                                </svg>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button" id="right-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 330" fill="#CBB083">
+                        <path d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z"/>
+                        
+                    </svg>
+                </button>
+            </div>                
+            <div class="carousel-nav">
+                    <button class="carousel-nav-btn current-date">2012 - 2014</button>
+                    <button class="carousel-nav-btn">2014 - 2016</button>
+                    <button class="carousel-nav-btn">2016 - 2017</button>
+                    <button class="carousel-nav-btn">2017 - 2018</button>
+                    <button class="carousel-nav-btn">2018 - 2024</button>
+                    <button class="carousel-nav-btn">2024</button>
+            </div>
         </section>
         <section class="odd" id="portfolio">
             <p>PORTFOLIO</p>

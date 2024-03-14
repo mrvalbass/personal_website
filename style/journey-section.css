@@ -1,44 +1,70 @@
 #journey {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
 }
 
-#map-container {
-  width: 75%;
-  max-width: 1000px;
-  margin: 0 auto
+#journey h1 {
+  padding-bottom: 0rem;
 }
 
-#map ellipse {
+#map-container {
+  width: 65%;
+  max-width: 900px;
+}
+
+ellipse {
   fill: #2d3847;
   stroke: #2d3847;    
   transition: 
       stroke 0.2s ease,
       fill 0.2s ease;
-}
-
-#map ellipse:hover,
-#map ellipse:active {
-  fill: #CBB083;
-  stroke: #CBB083;
   cursor: pointer;
 }
 
-#journey-list {
+ellipse:hover {
+  fill: #CBB083;
+  stroke: #CBB083;
+}
+
+#carousel {
   flex-grow: 1;
-  background-color: #2d3847;
-  margin: 1rem;
+  width: 100%;
+  max-width: 1500px;
+  height: 30dvh;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-button {
+  width: 3rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+
+.slider-container {
+  flex-grow: 1;
+  position: relative;
+  width: 80%;
+  overflow: hidden;
   border-radius: 5px;
   border: solid 0.25rem #CBB083;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 1250px;
+  background-color: #2d3847;
+
+}
+
+.journey-list {
+  height: 100%;
+  transition:
+    transform 0.4s ease-in-out;
 }
 
 .place {
+  position: absolute;
+  width: 100%;
+  height: 100%;
   display: flex;
   padding: 2rem;
   gap: 2rem;
@@ -66,15 +92,55 @@
   width: auto;
 }
 
-#journey-list span {
+.journey-list span {
   text-decoration: line-through;
 }
 
-/* Mobile layout */
+.carousel-nav {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  height: 10%;
+}
 
+.carousel-nav-btn {
+  background: transparent;
+  border: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2d3847;
+  cursor: pointer;
+  transition: 
+    color 0.2s ease;
+
+}
+
+.carousel-nav-btn:hover {
+  color: #CBB083;
+}
+
+.current-date {
+  color: #CBB083;
+}
+
+.current-city {
+  fill: #CBB083;
+  stroke: #CBB083;
+}
+
+/* Mobile layout */
 @media (width <= 1000px) {
+  #journey h1{
+    font-size: 2rem;
+  }
+
   #map-container {
     width: 100%;
+  }
+  
+  #carousel {
+    height: calc(100dvh - 109px);
   }
 
   .place {
@@ -83,10 +149,22 @@
   }
 
   .place-description {
+    font-size: 0.80rem;
     order: 1;
   }
 
   .place-logo {
     order: 2;
   }
+
+  .carousel-nav {
+    gap: 0.7rem;
+    height: 5%;
+  }
+  
+  .carousel-nav-btn {
+    font-size: 0.65rem;
+    font-weight: 700;
+  }
+  
 }
