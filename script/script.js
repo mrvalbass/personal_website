@@ -10,17 +10,16 @@ const cities = Array.from(frenchMap.children).slice(1)
 
 const cardWidth= cards[0].getBoundingClientRect().width;
 
-//Place slides side by side
+//Place cards side by side
 const setCardPosition = (card, index) => {
   card.style.left = `${index*cardWidth}px`
 };
 
 cards.forEach(setCardPosition);
 
-window.addEventListener('resize', () => {
-  cards.forEach(setCardPosition)
-  moveToCard(cards.length-1)
-})
+//Resize cards on carousel size modification
+const resizeObserver = new ResizeObserver(() =>cards.forEach(setCardPosition))
+resizeObserver.observe(journeyList)
 
 // Move to a target card
 const moveToCard = (targetIndex) => {
@@ -35,12 +34,23 @@ const moveToCard = (targetIndex) => {
 
     currentCard.classList.remove('current-card')
     targetCard.classList.add('current-card')
-
+    
     currentDate.classList.remove('current-date')
     dates[targetIndex].classList.add('current-date')
 
     currentCity.classList.remove('current-city')
     cities[targetIndex].classList.add('current-city')
+
+    if (targetIndex === cards.length -1) {
+      rightArrow.style.visibility = 'hidden'
+      leftArrow.style.visibility = 'visible'
+    } else if (targetIndex === 0) {
+      rightArrow.style.visibility = 'visible'
+      leftArrow.style.visibility = 'hidden'
+    } else {
+      rightArrow.style.visibility = 'visible'
+      leftArrow.style.visibility = 'visible'
+    }
   }
 }
 
@@ -69,9 +79,13 @@ navDates.addEventListener('click', e => {
 // Move to a card associated with a place 
 frenchMap.addEventListener('click', e => {
   const targetCity = e.target.closest('ellipse');
-  if (!targetCity) return
+  if (!targetCity) return;
   const targetIndex = cities.indexOf(targetCity);
   moveToCard(targetIndex);
+  console.log(window.innerWidth)
+  if (window.innerWidth <= 1000) {
+    carousel.scrollIntoView()
+  };
 })
 
 // Open the page on the last element

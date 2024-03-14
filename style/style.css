@@ -151,8 +151,8 @@ section h2 {
     }
 
     .even,
-    #experiences,
-    #about-me {
+    #portfolio,
+    #contact {
         min-height: calc(100dvh - 64px);
     }    
 }
