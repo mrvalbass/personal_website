@@ -25,12 +25,12 @@ nav {
     backdrop-filter: blur(10px);
     padding: 0 2rem;
     width: 8rem;
-    transition: width 0.2s ease;
+    transition: width 0.5s cubic-bezier(0, 0.6, 0, 1);
     z-index: 10;
 }
 
 nav:hover {
-    width: 18rem;
+    width: 17rem;
 }
 
 .navbar {
@@ -49,6 +49,7 @@ nav a {
 
 .nav-icon {
     min-width: 4rem;
+    width: 4rem;
 }
 
 .nav-icon path{
@@ -62,8 +63,8 @@ nav a {
 }
 
 nav a p {
-    display: none;
-    text-align: center;
+    visibility: hidden;
+    opacity: 0;
     font-family: "Megrim",sans-serif;
     font-size: 1.3rem;
     font-weight: 700;
@@ -84,13 +85,15 @@ a:hover p {
     color: #CBB083;
 }
 
-@media (width > 1000px) {
+@media (width > 900px) {
     nav:hover a p {
-        display: block;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 0.4s ease;
     }
 }
-/* General section style */
 
+/* General section style */
 section {
     min-height: 100svh;
     padding-left: 7.9rem;
@@ -117,9 +120,38 @@ section h2 {
     text-align: center;
 }
 
-/* Mobile layout */
+/* Language Selector */
+.language-selector {
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    margin: 2rem;
+    font-weight: 1000;
+    font-size: 1rem;
+    z-index: 9;
+    background-color: #7593c054;
+    backdrop-filter: blur(10px);
+}
 
-@media (width <= 1000px) {
+.language-selector a {
+    border: solid 2px rgb(150, 150, 150);
+    padding: 0.5rem;
+    color: rgb(150, 150, 150);
+    cursor: pointer;
+    transition: 
+        color 0.2s ease-in-out,
+        border-color 0.2s ease-in-out;
+}
+
+.language-selector a:hover {
+    color: #CBB083;
+    border-color: #CBB083;
+}
+
+
+/* Mobile layout */
+@media (width <= 900px) {
     html{
         scroll-padding-top: 64px;
     }
@@ -144,6 +176,22 @@ section h2 {
 
     #journey-icon {
         fill: #CBB083;
+    }
+
+    nav a p {
+        display: none;
+    }
+
+    .language-selector {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        margin: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .language-selector a {
+        padding: 0.3rem;
     }
 
     section {

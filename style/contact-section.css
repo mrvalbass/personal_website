@@ -130,7 +130,7 @@ input[type="submit"]:active {
 
 /* Mobile layout */
 
-@media (width <= 1000px) {
+@media (width <= 900px) {
 
   legend h1{
     font-size: 2rem;

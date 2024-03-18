@@ -31,7 +31,7 @@ ellipse:hover {
   flex-grow: 1;
   width: 100%;
   max-width: 1500px;
-  height: 30dvh;
+  min-height: 40svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +42,10 @@ ellipse:hover {
   background-color: transparent;
   border: none;
   cursor: pointer;
-  transition: transform 0.2s ease-in-out;
+  transition: 
+    transform 0.2s ease-in-out,
+    opacity 0.3s ease-out,
+    visibility 0.5s ease-in-out;
 }
 
 .carousel-button:hover {
@@ -112,7 +115,7 @@ ellipse:hover {
   padding: 1rem;
   border-radius: 5px;
   flex-basis: 30%;
-  max-width: 20rem;
+  /* max-width: 20rem; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,6 +128,8 @@ ellipse:hover {
 
 .place-logo img {
   width: 100%;
+  object-fit:  contain;
+  max-height: 100%;
 }
 
 .journey-list span {
@@ -167,7 +172,7 @@ ellipse:hover {
 }
 
 /* Mobile layout */
-@media (width <= 1000px) {
+@media (width <= 900px) {
   #journey h1{
     font-size: 2rem;
   }
@@ -177,15 +182,17 @@ ellipse:hover {
   }
   
   #carousel {
-    height: calc(100dvh - 128px);
+    min-height: calc(100svh - 128px);
   }
+
 
   .place {
     flex-direction: column;
+    font-size: 0.75rem;
   }
 
   .place-description {
-    font-size: 0.9rem;
+    
     order: 1;
   }
 
@@ -195,6 +202,11 @@ ellipse:hover {
 
   .place-logo {
     order: 2;
+    max-height: 20%;
+  }
+
+  .place-logo img {
+    max-height: 100%;
   }
 
   .carousel-nav {
